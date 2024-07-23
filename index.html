@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplify JavaScript Tool</title>
+    <style>
+		html {
+			font-family: Arial;
+		}
+        textarea {
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simplify JavaScript Tool</h1>
+	<p>Removes line break, extra space, tabs and double slash comment.</p>
+    <textarea id="inputArea" placeholder="Paste your JavaScript code here..."></textarea>
+    <button onclick="simplifyJavaScript()">Simplify JavaScript</button>
+
+    <script>
+function simplifyJavaScript() { let textArea = document.getElementById('inputArea'); let text = textArea.value; text = text.replace(/\/\/[^\n]*/g, ''); text = text.replace(/\s+/g, ' ').trim(); textArea.value = text; }
+    </script>
+</body>
+</html>
